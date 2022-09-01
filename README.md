@@ -5,6 +5,10 @@ A password generator that takes in uppercase, lowercase, numbers and symbols to 
 
 ## Mock Up
 
+The following image shows the web application's appearance:
+
+![This website includes a textbox to display password generated with a button to start the process.](./assets/images/ch03.png)
+
 ## Link
 
 https://jazgue.github.io/ch03/
