@@ -6,3 +6,5 @@ A password generator that takes in uppercase, lowercase, numbers and symbols to 
 ## Mock Up
 
 ## Link
+
+https://jazgue.github.io/ch03/
