@@ -1,9 +1,9 @@
 const pw_strings =
 {
-  lowercase: 'abcdefghijklmnopqrstuvwxyz',
-  uppercase: 'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
-  numbers: '0123456789',
-  symbols: "!#$%&'()*+,-./:;<=>?@[\]^_`{|}~",
+  lowercase: "abcdefghijklmnopqrstuvwxyz",
+  uppercase: "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+  numbers: "0123456789",
+  chars: "!#$%&'()*+,-./:;<=>?@[\]^_`{|}~",
 };
 
 // Assignment Code
@@ -23,8 +23,14 @@ function generatePassword()
 {
   passwordGenerated = "";
   // Asks user for length of password
-  var length = window.prompt ("Enter password length from 8 to 128.");
-
+  var length = window.prompt("Enter password length from 8 to 128");
+  // Checks if length is between 8 and 128 else returns error
+  if(length < 8 || length > 128)
+  {
+    alert("Please enter password length from 8 to 128");
+    return null;
+  }
+  
   // Asks user if they want lowercase letters
   var lowercase = window.confirm("Would you like to use lowercase?");
   if(lowercase)
@@ -43,12 +49,18 @@ function generatePassword()
   {
     passwordGenerated += pw_strings.numbers;
   }
-  // Asks user if they want symbols
-  var symbols = window.confirm("Would you like to use symbols?");
-  if(symbols)
+  // Asks user if they want special characters
+  var chars = window.confirm("Would you like to use special characters?");
+  if(chars)
   {
-    passwordGenerated += pw_strings.symbols;
+    passwordGenerated += pw_strings.chars;
   }
+
+  if (passwordGenerated.length == 0)
+  {
+    alert("Error! Please try again and select an option.");
+  }
+
   // Sets empty string
   var password = "";
 
